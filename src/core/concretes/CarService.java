@@ -80,6 +80,7 @@ public class CarService {
             for (Car w : carList) {
 
                 if ((w.getId() == id) && (w.isAvailable()) && (secilenCars.contains(w))) {
+                    secilenCars.clear();
                     return w;
 
                 } else if ((w.getId() == id) && (!w.isAvailable()) && (secilenCars.contains(w))) {

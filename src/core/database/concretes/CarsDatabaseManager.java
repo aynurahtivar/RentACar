@@ -16,7 +16,7 @@ public class CarsDatabaseManager {
 
     public void read() {
         try {
-            File file = new File("C:\\Users\\Aynur\\IdeaProjects\\NewRentACar\\src\\core\\database\\databaseDepo\\Cars");
+            File file = new File("C:\\Users\\Aynur\\IdeaProjects\\RentACar\\src\\core\\database\\databaseDepo\\Cars");
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             String cars = null;
