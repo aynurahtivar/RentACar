@@ -50,7 +50,8 @@ public class ReservationService extends CustomerService {
             printRezervationInfo(reservation);
             calculateCost(car, reservation);
             tinyMethods.nextOrStop();
-            tinyMethods.calculateConfirm();
+
+            //tinyMethods.calculateConfirm();
             reservationList.add(reservation);
             customerList.add(customer);
             car.setAvailable(false);

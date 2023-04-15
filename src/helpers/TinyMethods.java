@@ -30,6 +30,7 @@ public class TinyMethods {
                 case 1:
                     System.out.println("\n\t.....Musteri kayit islemlerine yonlendiriliyorsunuz.....");
                     customerService.createCustomer();
+                    calculateConfirm();
                     isValid = false;
                     break;
                 default:
@@ -47,7 +48,7 @@ public class TinyMethods {
         if (!secim.equals("1")) {
             System.out.println("\tAna menuye yonlendiriliyorsunuz....");
             KullaniciArayuzu kullaniciArayuzu = new KullaniciArayuzu();
-            kullaniciArayuzu.girisMessage();
+            kullaniciArayuzu.showMenu();
         } else {
             System.out.println("\n\n\tRezervasyonunuz onaylanmistir. Iyi surusler dileriz..\uD83D\uDE42");
 
