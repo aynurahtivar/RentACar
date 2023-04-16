@@ -21,8 +21,7 @@ public class DateTimeValidations {
                 isValid = false;
             } catch (Exception e) {
                 isValid = true;
-
-                System.out.println("\n\tHatali giris!!! " + e.getMessage() + "\n\tTekrar deneyiniz....");
+                System.out.println("\n\tHatali giris!!!\tTekrar deneyiniz....");
                 System.out.print("\n\tTarih (gun/ay/yil): ");
             }
         } while (isValid);
@@ -30,7 +29,7 @@ public class DateTimeValidations {
         return date;
     }
 
-    public void isBefore(LocalDate date) {
+    public LocalDate isBefore(LocalDate date) {
         boolean isValid = true;
         do {
 
@@ -38,44 +37,48 @@ public class DateTimeValidations {
                 if (ChronoUnit.DAYS.between(LocalDate.now(), date) < 0) {
                     System.err.println("\tKiralayacaginiz gun bugunden once olamaz!!!");
                     System.out.print("\n\t⇢↠ Kiralayacaginiz tarihi giriniz (gun/ay/yil): ");
-                    dateValidation();
+                    date = dateValidation();
                     isValid = false;
                 } else {
                     isValid = false;
                 }
             } catch (Exception e) {
-                System.out.println("\n\tHatali giris!!! " + e.getMessage() + "\n\tTekrar deneyiniz....");
+                System.out.println("\n\tHatali giris!!!\tTekrar deneyiniz....");
                 System.out.print("\n\t\n\t⇢↠ Kiralayacaginiz tarihi giriniz (gun/ay/yil): ");
-                dateValidation();
+                date = dateValidation();
 
             }
 
         } while (isValid);
 
+        return date;
+
 
     }
 
 
-    public void isAfter(LocalDate date, LocalDate date2) {
+    public LocalDate isAfter(LocalDate date, LocalDate date2) {
         boolean isValid = true;
         do {
 
             try {
                 if (ChronoUnit.DAYS.between(date, date2) < 0) {
                     System.out.println("\n\tTeslim edeceginiz gun kiraladiginiz tarihten once olamaz!");
-                    System.out.println("\n\t⇢↠ Araci teslim edeceginiz tarihi giriniz (gun/ay/yil): ");
-                    dateValidation();
+                    System.out.print("\n\t⇢↠ Araci teslim edeceginiz tarihi giriniz (gun/ay/yil): ");
+                    date2 = dateValidation();
                     isValid = false;
                 } else {
                     isValid = false;
                 }
             } catch (Exception e) {
-                System.out.println("\n\tHatali giris!!! " + e.getMessage() + "\n\tTekrar deneyiniz....");
-                System.out.println("\n\t⇢↠ Araci teslim edeceginiz tarihi giriniz (gun/ay/yil): ");
-                dateValidation();
+                System.out.println("\n\tHatali giris!!!\tTekrar deneyiniz....");
+                System.out.print("\n\t⇢↠ Araci teslim edeceginiz tarihi giriniz (gun/ay/yil): ");
+                date2 = dateValidation();
             }
 
         } while (isValid);
+
+        return date2;
 
 
     }
@@ -94,7 +97,7 @@ public class DateTimeValidations {
             } catch (Exception e) {
 
 
-                System.out.println("\n\tHatali giris!!! \n\tTekrar deneyiniz....");
+                System.err.println("\n\tHatali giris!!!\tTekrar deneyiniz....");
                 System.out.print("\n\tSaat: ");
                 isValid = true;
             }

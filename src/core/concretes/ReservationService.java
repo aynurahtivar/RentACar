@@ -35,10 +35,10 @@ public class ReservationService extends CustomerService {
             System.out.print("\t" + "—⋅".repeat(6) + "⇢↠ Kiralayacaginiz tarihi giriniz (gun/ay/yil): ");
             scan.nextLine();
             LocalDate alinacakGun = dateTimeValidations.dateValidation();
-            dateTimeValidations.isBefore(alinacakGun);
+            alinacakGun = dateTimeValidations.isBefore(alinacakGun);
             System.out.print("\t" + "—⋅".repeat(6) + "⇢↠ Araci teslim edeceginiz tarihi giriniz (gun/ay/yil): ");
             LocalDate teslimGunu = dateTimeValidations.dateValidation();
-            dateTimeValidations.isAfter(alinacakGun, teslimGunu);
+            teslimGunu = dateTimeValidations.isAfter(alinacakGun, teslimGunu);
 
             System.out.print("\t" + "—⋅".repeat(6) + "⇢↠ Araci teslim alacaginiz saati (10.00) formatinda giriniz : ");
             LocalTime alinacakSaat = dateTimeValidations.timeValidation();
