@@ -95,8 +95,6 @@ public class DateTimeValidations {
                 time = LocalTime.parse(time1, formatter);
                 isValid = false;
             } catch (Exception e) {
-
-
                 System.err.println("\n\tHatali giris!!!\tTekrar deneyiniz....");
                 System.out.print("\n\tSaat: ");
                 isValid = true;

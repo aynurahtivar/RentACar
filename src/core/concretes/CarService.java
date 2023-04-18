@@ -40,14 +40,12 @@ public class CarService {
 
         boolean isValid;
         do {
-            int count = 0;
             for (Car w : carList) {
                 if (w.getMarka().equalsIgnoreCase(select)) {
                     secilenCars.add(w);
-                    count++;
                 }
             }
-            if (count > 0) {
+            if (secilenCars.size() > 0) {
                 System.out.println("\n\n\t" + "⊹".repeat(73));
                 System.out.println("\t" + "−".repeat(21) + "⋙   SECTIGINIZ MARKANIN ARACLARI   ⋘" + "−".repeat(21));
                 System.out.println("\t" + "⋅".repeat(152) + "\n");
@@ -71,28 +69,25 @@ public class CarService {
     }
 
     public Car findByIDVehicle(int id, LinkedHashSet<Car> secilenCars) {
-
-        int counter = 0;
         boolean isValid = false;
         do {
-
-
-            for (Car w : carList) {
-
-                if ((w.getId() == id) && (w.isAvailable()) && (secilenCars.contains(w))) {
-                    secilenCars.clear();
-                    return w;
-
-                } else if ((w.getId() == id) && (!w.isAvailable()) && (secilenCars.contains(w))) {
-                    System.out.println("\t Secilen arac kiralanmistir..");
-                    System.out.print("\n\t" + "—⋅".repeat(6) + "⇢↠ Farki bir ID numarasini giriniz: ");
-                    id = inputValidations.scan();
-                    isValid = true;
+            int counter = 0;
+            for (Car w : secilenCars) {
+                if (w.getId() == id) {
+                    if (w.isAvailable()) {
+                        secilenCars.clear();
+                        return w;
+                    } else {
+                        System.out.println("\t Secilen arac kiralanmistir..");
+                        System.out.print("\n\t" + "—⋅".repeat(6) + "⇢↠ Farki bir ID numarasini giriniz: ");
+                        id = inputValidations.scan();
+                        isValid = true;
+                    }
                 } else {
                     counter++;
                 }
             }
-            if (counter > 0) {
+            if (counter == secilenCars.size()) {
                 System.out.println("\tGirdiginiz ID numarasina ait arac bulunamadi!");
                 System.out.print("\n\t" + "—⋅".repeat(6) + "⇢↠ Sectiginiz markaya ait ID numarasini giriniz: ");
                 id = inputValidations.scan();

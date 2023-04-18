@@ -31,19 +31,14 @@ public class CustomerService extends CarService {
         System.out.println("\t" + "⋅".repeat(146) + "\n");
         printCustomerInfo(customer);
 
-
-
-
     }
 
 
     public void printCustomerInfo(Customer customer) {
         System.out.println("\t" + "−".repeat(26) + "⋙   Musteri Bilgileri   ⋘" + "−".repeat(27));
-
         System.out.printf("\t%-20s %-15s %-20s %-10s\n", "ADI-SOYADI ", "TC", "DOGUM TARIHI", "LICENCE NUMBER");
         System.out.printf("\t%-20s %-15s %-20s %-10s\n", "----------", "-----------", "--------------", "---------------");
         System.out.printf("\t%-20s %-15s %-20s %-10s\n", customer.getNameSurname(), customer.getTcNum(), customer.getBirthDate(), customer.getDrivingLicenceNumber());
-
     }
 
 

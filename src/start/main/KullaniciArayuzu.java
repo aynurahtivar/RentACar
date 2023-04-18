@@ -22,15 +22,16 @@ public class KullaniciArayuzu {
             select = inputValidations.scan();
             switch (select) {
                 case 0:
-                    System.out.println("\t" + " ".repeat(31) + " Iyi gunler dileriz \uD83D\uDE14" +"\t" + " ".repeat(31) );
+                    System.out.println("\t" + " ".repeat(31) + " Iyi gunler dileriz \uD83D\uDE14" + "\t" + " ".repeat(31));
                     break;
                 case 1:
                     rentACarAppMenu.showMenu();
                     break;
                 case 2:
-                    rentACarAppMenu.cancelRezervasyon();
+                    rentACarAppMenu.cancelRezervasyon();    //gelistirilecek
                     break;
                 default:
+                    System.out.println("\tHatali secim!");
                     break;
             }
 

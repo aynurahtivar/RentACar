@@ -2,8 +2,6 @@ package core.concretes;
 
 import core.attributesclasses.Car;
 import core.attributesclasses.Reservation;
-import helpers.DateTimeValidations;
-import helpers.InputValidations;
 import helpers.TinyMethods;
 
 import java.time.LocalDate;
@@ -13,7 +11,6 @@ import java.util.*;
 
 public class ReservationService extends CustomerService {
     TinyMethods tinyMethods = new TinyMethods();
-
     List<Reservation> reservationList = new ArrayList<>();
     String marka;
     int id;
@@ -51,7 +48,6 @@ public class ReservationService extends CustomerService {
             calculateCost(car, reservation);
             tinyMethods.nextOrStop();
 
-            //tinyMethods.calculateConfirm();
             reservationList.add(reservation);
             customerList.add(customer);
             car.setAvailable(false);
@@ -111,7 +107,7 @@ public class ReservationService extends CustomerService {
                         customerList.remove(idx);
                         System.out.println("\n\n\t" + " ".repeat(10) + "   Rezervasyonunuz basarili bir sekilde silinmistir. ✅   ");
                         if (reservationList.isEmpty()) {
-                            reservationList.add(null);
+                            reservationList.add(null);  //sonra bakilacak
                         }
                     }
                     case "H" -> System.out.println("\n\tAna menuye yonlendiriliyorsunuz.....");

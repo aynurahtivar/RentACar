@@ -29,7 +29,7 @@ public class RentACarAppMenu extends ReservationService {
                     select = 0;
                     break;
                 default:
-                    System.out.println("Hatali secim!");
+                    System.out.println("\tHatali secim!");
                     break;
             }
         } while (select != 0);

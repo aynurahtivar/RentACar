@@ -10,9 +10,6 @@ public class Customer {
 
     private int id;
 
-    public Customer() {
-
-    }
 
     public Customer(int id, String nameSurname, String tcNum, LocalDate birthDate, String drivingLicenceNumber) {
         this.id = id;
